@@ -10,7 +10,8 @@ export class BookController {
 
     @Post('/create-book')
     async create(@Body() body: CreateBookDto){
-        const result = await this.bookService.createBook(body, body)
+        const result = await this.bookService.createBook(body)
         return { statusCode: 200, messages: 'Success.', data: result}
     }
 }
+// gaenen follow naaku

@@ -4,6 +4,6 @@ export interface Book {
     no_id?: string
     title?: string
     author?: string
-    created_at?: string
-    updated_at?: string
+    created_at?: Date
+    updated_at?: Date
 }

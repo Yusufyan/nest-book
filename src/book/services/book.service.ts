@@ -15,12 +15,15 @@ export class BookService {
         private readonly bookRepository: Repository<BookEntity>
     ){}
     
-    createBook(@Body() body: CreateBookDto, bookPost: Book): Observable<Book>{
-        const existBook = this.bookRepository.findOneBy({no_id: body.no_id})
+    async createBook(@Body() body: CreateBookDto): Promise<Book>{
+        const existBook = await this.bookRepository.findOne({where: {no_id: body.no_id}})
         if (existBook) throw new Exception (`Book ${body.no_id} already exists`, 400)
+        
+        const result: Book = await this.bookRepository.save(body)
 
-        return from(this.bookRepository.save(bookPost))
+        return result
     }
 
+    
 
 }
