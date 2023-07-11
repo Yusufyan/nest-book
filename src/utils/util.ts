@@ -1,4 +1,4 @@
-import { bcrypt } from 'bcrypt'
+import * as bcrypt from 'bcrypt'
 
 export function generatedId(code, num){
     let pad = "0000"

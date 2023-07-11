@@ -4,7 +4,7 @@ export class CreateUserDto {
 
     username: string
 
-    @IsEmail()
+    @IsEmail({}, { message: 'Email is not valid' })
     email: string
 
     password: string
