@@ -13,5 +13,11 @@ export class BookController {
         const result = await this.bookService.createBook(body)
         return { statusCode: 200, messages: 'Success.', data: result}
     }
+
+    @Get('/get-book')
+    async getAllBook(){
+        const result = await this.bookService.getAllBook()
+        return { statusCode: 200, messages: 'Success.', data: result}
+    }
 }
 // gaenen follow naaku

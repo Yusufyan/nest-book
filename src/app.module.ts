@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
-import { BookModule } from './book/book.module';
+import { BookModule } from './modules/book/book.module'; 
+import { UserModule } from './modules/auth/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -18,7 +19,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: true,
       synchronize: true
     }),
-    BookModule
+    BookModule,
+    UserModule
   ],
   controllers: [],
   providers: [],

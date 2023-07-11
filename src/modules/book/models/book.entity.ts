@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity('books')
 export class BookEntity{
@@ -19,4 +19,7 @@ export class BookEntity{
 
     @Column({ type: 'timestamp', default:null})
     updated_at: Date
+
+    @Column({ default: 'F' })
+    is_deleted: boolean
 }
