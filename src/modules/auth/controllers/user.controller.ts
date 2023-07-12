@@ -13,8 +13,8 @@ export class UserController {
         return { statusCode: 200, message: 'Success', data: result }
     }
 
-    @Patch('/update-user')
-    async update(@Param(':id') id:number ,@Body() body: UpdateUserDto){
+    @Patch('/update-user/:id')
+    async update(@Param('id') id:number ,@Body() body: UpdateUserDto){
         const result = await this.userService.updateUser(id, body)
         return { statusCode: 200, message: 'Success.', data: result}
     }
